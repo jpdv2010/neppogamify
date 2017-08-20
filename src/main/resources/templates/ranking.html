@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="LayoutPadrao">
+<head>
+    <title>Ranking</title>
+</head>
+
+<section layout:fragment="conteudo">
+    <div class="panel panel-default">
+        <div class="panel=heading">
+            <h1 class="panel-title">Ranking</h1>
+        </div>
+        <div class="panel-body">
+            <table class="table table-inverse">
+                <thead>
+                <tr>
+                    <th class="text-center">Rank</th>
+                    <th class="text-center">Nome</th>
+                    <th class="text-center">Level</th>
+                    <th class="text-center">Pontuacao</th>
+                    <th class="com-md-1"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="func : ${funcionarios}">
+                    <td class="text-center" th:text="${func.id}">1</td>
+                    <td th:text="${func.nome}"></td>
+                    <td class="text-right" th:text="${func.level}"></td>
+                    <td class="text-center" th:text="${func.pontuation}"></td>
+                    <td class="text-center "></td>
+                </tr>
+
+                <td colspan="6" th:if="${#lists.isEmpty(funcionarios)}">Nehum funcionario foi encontrado!
+                </td>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</section>
+</html>

@@ -1,0 +1,26 @@
+.navbar-brand{
+	padding-top: 12px;
+}
+
+.panel-default{
+	margin-left:10px;
+	margin-right:10px;
+	background: #CDCDC1;
+}
+
+.alert{
+margin-left:10px;
+margin-right:10px;
+background:#98FB98;
+}
+
+.ng-link-panel{
+float: right;
+padding: 0px;
+}
+
+.ng-titulo-panel{
+float:left;
+padding-top: 2px;
+}
+

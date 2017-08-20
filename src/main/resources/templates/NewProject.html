@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="LayoutPadrao">
+<head>
+    <title>Cadastro</title>
+</head>
+
+<section layout:fragment="conteudo">
+    <form class="form-hotizontal" method="POST" action="/projeto">
+        <div class="panel panel-default">
+            <div class="panel=heading">
+                <h1 class="panel-title">Criar Projeto</h1>
+            </div>
+            <div class="panel-body">
+
+                <div class="form-group">
+                    <label class="col-sm-2 form-control-label" for="formGroupName">Nome do Projeto</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="formGroupName" placeholder="Nome" width="20" name="nome"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 form-control-label" for="formFinishDate">Data Final</label>
+                    <div class="col-sm-2">
+                        <input type="text" class="form-control" id="formFinishDate" placeholder="Data de Finalizacao" name="finishDate"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Descricao</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="descricao"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary">Pronto</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</section>
+</html>

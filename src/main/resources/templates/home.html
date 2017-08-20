@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="LayoutPadrao">
+<head>
+    <title>Home</title>
+</head>
+<section layout:fragment="conteudo">
+    <div class="alert alert-sucess" th:if="${!#strings.isEmpty(mensagem)}">
+        <span th:text="${mensagem}">Cadastrado com sucesso!</span>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel=heading">
+            <div class="clear-fix">
+            <h1 class="panel-title ng-titulo-panel">Bem vindo!</h1>
+            <a class="nav-link col-sm-1 ng-link-panel" href="/funcionario/ranking">Ranking</a>
+            <a class="nav-link col-sm-1 ng-link-panel" href="/funcionario/novo">Cadastro</a>
+            <a class="nav-link col-sm-1 ng-link-panel" href="/projeto/area">Entrar</a>
+            </div>
+        </div>
+        <div class="panel-body">
+
+
+
+        </div>
+    </div>
+</section>
+
+
+</html>
