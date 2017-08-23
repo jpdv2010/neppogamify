@@ -6,6 +6,8 @@ import br.com.neppogamify.neppogamify.model.Projeto;
 import br.com.neppogamify.neppogamify.repository.Funcionarios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -29,14 +31,18 @@ public class FuncionarioController {
     public ModelAndView novo(){
 
         ModelAndView mv=new ModelAndView("CadastroFuncionario");
-        //mv.addObject("allCargosFuncionario", CargoFuncionario.values());
+        mv.addObject(new Funcionario());
         return mv;
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView salvar(Funcionario funcionario){
-        funcionarios.save(funcionario);
+    public ModelAndView salvar(@Validated Funcionario funcionario,Errors errors){
         ModelAndView mv=new ModelAndView("home");
+        if(errors.hasErrors()){
+            mv.setViewName("CadastroFuncionario");
+            return mv;
+        }
+        funcionarios.save(funcionario);
         mv.addObject("mensagem","Cadastrado com sucesso!");
         return mv;
     }

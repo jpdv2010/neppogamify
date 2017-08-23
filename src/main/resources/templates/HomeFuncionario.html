@@ -18,9 +18,10 @@
             <div>
                 seus projetos
                 <div class="card" style="width: 20rem;" th:each="proj : ${projetos}">
-                    <img class="card-img-top" src="../static/images/ng-project-image.png" alt="Card image cap">
+                   <!-- <img class="card-img-top" src="../static/images/ng-project-image.png" alt="Card image cap">-->
                     <h4 class="card-title" th:text="${proj.nome}">Projeto</h4>
                     <p class="card-text" th:text="proj.descricao">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="/projeto/homep" class="btn btn-primary">Ver Projeto</a>
                 </div>
 
                 <div colspan="6" th:if="${#lists.isEmpty(projetos)}">Voce nao participa de nehum projeto

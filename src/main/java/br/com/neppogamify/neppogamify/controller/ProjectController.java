@@ -44,4 +44,9 @@ public class ProjectController {
         return mv;
     }
 
+    @RequestMapping("/homep")
+    public ModelAndView projectHome(){
+        ModelAndView mv=new ModelAndView("ProjectHome");
+        return mv;
+    }
 }

@@ -6,18 +6,22 @@ package br.com.neppogamify.neppogamify.model;
         import java.util.List;
 
         import javax.persistence.*;
+        import javax.validation.constraints.NotNull;
 
 @Entity
 public class Funcionario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @NotNull(message="Digite um nome válido!")
     private String nome;
     private String sobrenome;
     @DateTimeFormat(pattern = "dd/MM/yyyy")
     @Temporal(TemporalType.DATE)
     private Date birdDate;
+    @NotNull(message="Digite um e-mail válido!")
     private String email;
+    @NotNull(message="Digite uma senha válida!")
     private String password;
     private String cargo;
 

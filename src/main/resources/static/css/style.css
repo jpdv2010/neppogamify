@@ -14,6 +14,12 @@ margin-right:10px;
 background:#98FB98;
 }
 
+.alert-danger{
+margin-left:10px;
+margin-right:10px;
+background:#E9967A;
+}
+
 .ng-link-panel{
 float: right;
 padding: 0px;
