@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Concerted 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20131014
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>NeppoGamify - Cadastro</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link href="bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+
+<!--[if IE 6]><link href="default_ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
+
+</head>
+<body>
+<div id="header" class="container">
+	<div id="logo">
+		<h1><img src="images/logo-neppgamify.png" width="60" height="40" alt=""/>
+		<a href="#">NeppoGamify</a></h1>
+	</div>
+	<div id="menu">
+		<ul>
+			<li><a href="#" accesskey="1" title="">Ranking</a></li>
+			<li><a href="#" accesskey="1" title="">Home</a></li>
+		</ul>
+	</div>
+</div>
+<div id="banner-wrapper">	
+	<div id="banner" class="container">
+		
+	<div class="form-entrar">
+	<form class="form-hotizontal" method="POST" action="/funcionario" th:object="${funcionario}">
+		<!--<div class="alert-danger" th:if="${#fields.hasAnyErrors()}">
+			<div th:each="detailedError : ${#fields.detailedErrors()}">
+				<span th:text="${detailedError.message}">Alguns campos ficaram vazios!</span>
+			</div>
+		</div>-->
+      	<div class="panel panel-default">
+      	<div class="panel=heading">
+      	<h2 class="panel-title">Cadastro</h1>
+      	</div>  
+      	<div class="panel-body">
+      	
+      		<div class="form-group">
+    			<label class="form-control-label" for="formGroupName">Nome</label>
+    			<input type="text" class="form-control" id="formGroupName" placeholder="Nome" width="20" name="nome"/>  				
+  			</div>
+  			
+  			<div class="form-group">
+    			<label class="form-control-label" for="formGroupNickname">Sobrenome</label>
+    			<input type="text" class="form-control" id="formGroupNickname" placeholder="Sobrenome" name="sobrenome"/>
+  			</div>
+  			
+  			<div class="form-group">
+    			<label class="form-control-label" for="formBirdDate">Data de Nascimento</label>
+    			<input type="text" class="form-control" id="formBirdDate" placeholder="Data de Nascimento" name="birdDate"/>
+  			</div>
+  			
+  			<div class="form-group">
+    			<label class="form-control-label" for="InputEmail">Email</label>
+    				<input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email" name="email"/>
+    				<small id="emailHelp" class="form-text text-muted">Nao compartilhe seu email com ninguem.</small>					
+  			</div>
+  			
+ 			<div class="form-group">
+    			<label class="form-control-label" for="InputPassword">Senha</label>
+    			<input type="password" class="form-control" id="InputPassword" placeholder="Senha" name="password"/>
+  			</div>
+  			
+  			<div class="form-group">
+    			<label class="form-control-label" for="selectCargo">Cargo</label>
+    			<select class="form-control" id="selectCargo" name="cargo">
+      				<option th:each="cargoFuncionario : ${allCargosFuncionario}"
+							th:value="${cargoFuncionario}" th:text="${cargoFuncionario.descricao}"></option>
+    			</select>
+  			</div>
+  			<div class="form-check">
+    			<label class="form-check-label">
+      				<input type="checkbox" class="form-check-input"/>
+      				Aceito os termos
+    			</label>
+  			</div>
+  			
+  			<div class="form-group">
+  			<button type="submit" class="btn btn-primary">Proximo</button>
+  			</div>
+  			
+      	</div>	      	
+  		</div>
+	</form>
+	</div>
+	
+	</div>
+</div>
+<div id="page-wrapper">
+</div>
+<div id="footer-wrapper">
+	<div id="footer" class="container">
+		<div id="fbox2">
+		</div>
+	</div>
+</div>
+<div id="copyright">
+	<ul class="contact">
+		<li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+		<li><a href="#" class="icon icon-facebook"><span></span></a></li>
+		<li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+		<li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+		<li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+	</ul>
+	
+	<p>&copy; Untitled. All rights reserved.</p>
+</div>
+</body>
+</html>
