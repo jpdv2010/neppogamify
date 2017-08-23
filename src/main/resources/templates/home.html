@@ -7,23 +7,51 @@
     <title>Home</title>
 </head>
 <section layout:fragment="conteudo">
-    <div class="alert alert-sucess" th:if="${!#strings.isEmpty(mensagem)}">
-        <span th:text="${mensagem}">Cadastrado com sucesso!</span>
+    <div id="banner-wrapper">
+        <div id="banner" class="container">
+            <h3>Entrar</h3>
+            <div id="menu-interno">
+                <ul>
+                    <a href="/funcionario/novo" accesskey="1" title="">Cadastrar-se</a>
+                </ul>
+            </div>
+            <div class="form-entrar">
+                <form method="POST" action="/funcionario/verificar">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">E-Mail</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="digite seu email" name="emailVerify"/>
+                        <small id="emailHelp" class="form-text text-muted">Nao compartilhe seu email com ninguem.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Senha</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha" name="passwordVerify"/>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Entrar</button>
+                </form>
+            </div>
+
+
+        </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel=heading">
-            <div class="clear-fix">
-            <h1 class="panel-title ng-titulo-panel">Bem vindo!</h1>
-            <a class="nav-link col-sm-1 ng-link-panel" href="/funcionario/ranking">Ranking</a>
-            <a class="nav-link col-sm-1 ng-link-panel" href="/funcionario/novo">Cadastro</a>
-            <a class="nav-link col-sm-1 ng-link-panel" href="/projeto/area">Entrar</a>
+    <div id="page-wrapper">
+    </div>
+    <div id="footer-wrapper">
+        <div id="footer" class="container">
+            <div id="fbox2">
             </div>
         </div>
-        <div class="panel-body">
+    </div>
+    <div id="copyright">
+        <ul class="contact">
+            <li><a href="#" class="icon icon-twitter"><span>Twitter</span></a></li>
+            <li><a href="#" class="icon icon-facebook"><span></span></a></li>
+            <li><a href="#" class="icon icon-dribbble"><span>Pinterest</span></a></li>
+            <li><a href="#" class="icon icon-tumblr"><span>Google+</span></a></li>
+            <li><a href="#" class="icon icon-rss"><span>Pinterest</span></a></li>
+        </ul>
 
-
-
-        </div>
+        <p>&copy; Untitled. All rights reserved.</p>
     </div>
 </section>
 

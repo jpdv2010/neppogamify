@@ -4,14 +4,19 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="LayoutPadrao">
 
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="../static/images/logo-neppgamify.png" width="40" height="30" alt=""/>
-            <ul class="navbar-nav mr-auto">
-                <a class="nav-link" href="home">NeppoGamify</a>
-            </ul>
-        </a>
-    </nav>
+<div id="header" class="container">
+    <div id="logo">
+        <h1><img src="images/logo-neppgamify.png" width="60" height="40" alt=""/>
+            <a href="#">NeppoGamify</a></h1>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><a href="/funcionario" accesskey="1" title="">Home</a></li>
+            <li><a href="/funcionario/ranking" accesskey="2" title="">Ranking</a></li>
+            <li><a href="/funcionario" accesskey="3" title="">Sair</a></li>
+        </ul>
+    </div>
+</div>
 
 
 

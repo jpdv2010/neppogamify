@@ -3,6 +3,7 @@ package br.com.neppogamify.neppogamify.controller;
 import br.com.neppogamify.neppogamify.model.CargoFuncionario;
 import br.com.neppogamify.neppogamify.model.Funcionario;
 import br.com.neppogamify.neppogamify.model.Projeto;
+import br.com.neppogamify.neppogamify.model.Verificator;
 import br.com.neppogamify.neppogamify.repository.Funcionarios;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -52,6 +53,21 @@ public class FuncionarioController {
         List<Funcionario> allFuncionarios =funcionarios.findAll();
         ModelAndView mv=new ModelAndView("ranking");
         mv.addObject("funcionarios",allFuncionarios);
+        return mv;
+    }
+
+    @RequestMapping(value="/verificar",method = RequestMethod.POST)
+    public ModelAndView verifica(Verificator verificator){
+        ModelAndView mv=new ModelAndView("CadastroFuncionario");
+        List<Funcionario> allFuncionarios=funcionarios.findAll();
+        for(Funcionario f:allFuncionarios){
+            if(f.getEmail()==verificator.getEmailVerify() && f.getPassword()==verificator.getPasswordVerify()){
+                mv.setViewName("HomeFuncionario");
+                mv.addObject("funcionario",f);
+            }else{
+                mv.setViewName("home");
+            }
+        }
         return mv;
     }
 
